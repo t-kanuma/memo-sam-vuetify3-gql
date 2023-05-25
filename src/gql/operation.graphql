@@ -1,0 +1,22 @@
+query getMemos($isArchived: Boolean!) {
+  memos(isArchived: $isArchived) {
+    archived
+    done
+    favorite
+    id
+    text
+    title
+  }
+}
+
+mutation createMemo($input: CreateMemoInput!) {
+  createMemo(memo: $input)
+}
+
+mutation updateMemo($input: UpdateMemoInput!) {
+  updateMemo(memo: $input)
+}
+
+mutation deleteMemo($id: String!) {
+  deleteMemo(id: $id)
+}
