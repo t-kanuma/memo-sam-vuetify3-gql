@@ -13,7 +13,3 @@ export const getGqlSdk = async () => {
 
   return getSdk(client);
 };
-
-export const isMemoArchiveResp = (value: unknown): value is MemoArchiveResp => {
-  return typeof value === "object" && value !== null && "memos" in value;
-};

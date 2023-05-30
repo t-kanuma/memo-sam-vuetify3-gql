@@ -61,7 +61,7 @@ export type Query = {
 
 
 export type QueryMemosArgs = {
-  isArchived?: InputMaybe<Scalars['Boolean']['input']>;
+  archived?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type UpdateMemoInput = {
@@ -74,7 +74,7 @@ export type UpdateMemoInput = {
 };
 
 export type GetMemosQueryVariables = Exact<{
-  isArchived: Scalars['Boolean']['input'];
+  archived: Scalars['Boolean']['input'];
 }>;
 
 
@@ -103,8 +103,8 @@ export type DeleteMemoMutation = { __typename?: 'Mutation', deleteMemo?: string 
 
 
 export const GetMemosDocument = gql`
-    query getMemos($isArchived: Boolean!) {
-  memos(isArchived: $isArchived) {
+    query getMemos($archived: Boolean!) {
+  memos(archived: $archived) {
     archived
     done
     favorite

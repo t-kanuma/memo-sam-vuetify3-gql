@@ -76,7 +76,6 @@ import { ref, onMounted, type Ref } from "vue";
 import { getArchives, deleteArchive } from "@/modules/archive";
 import { updateMemo } from "@/modules/memo";
 import { type Memo, type InfoMessage } from "@/types";
-import { isMemoArchiveResp } from "@/modules/common";
 
 const renderReady = ref(false);
 const noticeAfterUnarchive = ref(false);
@@ -93,9 +92,7 @@ const emit = defineEmits<{
 }>();
 const showArchive = async () => {
   const archiveResp = await getArchives();
-  if (isMemoArchiveResp(archiveResp)) {
-    archives.value = archiveResp.memos;
-  }
+  archives.value = archiveResp.memos;
 
   emit("pageName", "アーカイブ");
 };

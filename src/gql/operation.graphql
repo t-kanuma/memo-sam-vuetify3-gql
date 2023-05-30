@@ -1,5 +1,5 @@
-query getMemos($isArchived: Boolean!) {
-  memos(isArchived: $isArchived) {
+query getMemos($archived: Boolean!) {
+  memos(archived: $archived) {
     archived
     done
     favorite
