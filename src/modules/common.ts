@@ -1,4 +1,3 @@
-import type { MemoArchiveResp } from "@/types";
 import { getIdToken } from "@/modules/auth";
 import { GraphQLClient } from "graphql-request";
 import { getSdk } from "@/gql/generated/sdk";
