@@ -7,13 +7,7 @@ import { GetMemosQuery } from "@/gql/generated/sdk";
  */
 export const getArchives = async (): Promise<GetMemosQuery> => {
   const gqlSdk = await getGqlSdk();
-  try {
-    return await gqlSdk.getMemos({ archived: true });
-  } catch (e) {
-    // TODO: getMemosと同様
-    console.log(e);
-    throw e;
-  }
+  return await gqlSdk.getMemos({ archived: true });
 };
 
 /**
@@ -23,12 +17,6 @@ export const getArchives = async (): Promise<GetMemosQuery> => {
  */
 export const deleteArchive = async (archiveId: string): Promise<void> => {
   const gqlSdk = await getGqlSdk();
-  try {
-    const resp = await gqlSdk.deleteMemo({ id: archiveId });
-    console.log(resp.deleteMemo);
-  } catch (e) {
-    // TODO: getMemosと同様
-    console.log(e);
-    throw e;
-  }
+  const resp = await gqlSdk.deleteMemo({ id: archiveId });
+  console.log(resp.deleteMemo);
 };
